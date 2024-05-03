@@ -9,48 +9,51 @@
 </head>
 
 <body>
-    <header>
-
-        <div>
-        </a>
-        
-    </div>
     
-    <nav>
+    <div class="preto">
+        <div class="fundo">
+            <header>
+                <div>
+                </a>
+            </div>
+            <nav>
+                
+                <ul>
+                    Simulador Financeiro
+                </ul>
+                <img id="icone" src="assets/icone.png" alt="">
+                
+            </nav>
+            
+        </header>
         
-        <ul>
-            Simulador Financeiro
-        </ul>
-        <img id="icone" src="assets/icone.png" alt="">
+        <div class="home">
+            <h1 class="titulo"> WineCare</h1>
         
-    </nav>
-    
-    </header>
-
-    <div class="home">
-        <h1 class="titulo"> WineCare</h1>
-
         <div class="divMensagem">
             A simulação a baixo é baseada em uma entrevista realizada com um dono de uma Vinícola, <b>Fernando
                 Fischer</b> (dono da vinícola Fischer), apontando uma porcentagem de <span class="negrito">30%</span> de
-            perdas de vinhos durante sua produção e a comparando com o resultado que você terá após a implementação de
-            nossos sensores em sua vinícola, sendo baseados na produção
-            média de vinhos de uma vinícola, com uma média de tempo de produção sendo de um mês.
+                perdas de vinhos durante sua produção e a comparando com o resultado que você terá após a implementação de
+                nossos sensores em sua vinícola, sendo baseados na produção
+                média de vinhos de uma vinícola, com uma média de tempo de produção sendo de um mês.
+            </div>
+            <div class="divInput">
+                Informe a média do preço de seus vinhos (Em reais): <input id="input_valor" class="input"> <br> <br>
+                
+                Informe quantos barris você possui em sua vinícola: <input id="input_barris" class="input"> <br><br>
+                
+                Informe quantos litros cada barril pode produzir por mês: <input id="input_litros" class="input"> <br> <br>
+                
+                Informe a quantidade de vinhos que você vende por mês: <input id="input_qtd" class="input"> <br><br>
+                
+                <button class="botao" onclick="calcular()">Avaliar condições</button>
+            </div>
         </div>
-        <div class="divInput">
-            Informe a média do preço de seus vinhos (Em reais): <input id="input_valor" class="input"> <br> <br>
-
-            Informe quantos barris você possui em sua vinícola: <input id="input_barris" class="input"> <br><br>
-
-            Informe quantos litros cada barril pode produzir por mês: <input id="input_litros" class="input"> <br> <br>
-
-            Informe a quantidade de vinhos que você vende por mês: <input id="input_qtd" class="input"> <br><br>
-
-            <button class="botao" onclick="calcular()">Avaliar condições</button>
-        </div>
+        <div id="div_mensagem"></div>
+        
     </div>
-    <div id="div_mensagem"></div>
-
+    </div>
+    
 </body>
 
 </html>

@@ -15,7 +15,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 }
 
 header {
@@ -54,17 +53,23 @@ header {
     }
 
 }
+.preto {
+    background-color: black;
+}
 
 
-
-body {
+.fundo {
+    background-image: url(assets/barrels-whiskey-bourbon-aging-storage-facility.jpg);
+    opacity: 0.7;
     width: 100vw;
     height: 100vh;
-    background-image: url(assets/barrels-whiskey-bourbon-aging-storage-facility.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
 }
+
+
+
 
 .home {
     width: 500px;
