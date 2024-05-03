@@ -8,25 +8,47 @@
     <link rel="stylesheet" href="Calculadora.css">
 </head>
 
-<body class="fundo">
-    <h1 class="titulo">Calculadora WineCare</h1>
+<body>
+    <header>
 
-    <div class="divMensagem">
-        A simulação a baixo é baseada em uma entrevista realizada com um dono de uma Vinícola, <span class="negrito">Fernando Fischer</span> (dono da vinícola Fischer), apontando uma porcentagem de <span class="negrito">30%</span> de perdas de vinhos durante sua produção e a comparando com o resultado que você terá após a implementação de nossos sensores em sua vinícola, sendo baseados na produção
-        média de vinhos de uma vinícola, com uma média de tempo de produção sendo de um mês.
+        <div>
+        </a>
+        
     </div>
-    <div class="divInput">
-        Informe a média do preço de seus vinhos (Em reais): <input id="input_valor" class="input"> <br> <br>
+    
+    <nav>
+        
+        <ul>
+            Simulador Financeiro
+        </ul>
+        <img id="icone" src="assets/icone.png" alt="">
+        
+    </nav>
+    
+    </header>
 
-        Informe quantos barris você possui em sua vinícola: <input id="input_barris" class="input"> <br><br>
+    <div class="home">
+        <h1 class="titulo"> WineCare</h1>
 
-        Informe quantos litros cada barril pode produzir por mês: <input id="input_litros" class="input"> <br> <br>
+        <div class="divMensagem">
+            A simulação a baixo é baseada em uma entrevista realizada com um dono de uma Vinícola, <b>Fernando
+                Fischer</b> (dono da vinícola Fischer), apontando uma porcentagem de <span class="negrito">30%</span> de
+            perdas de vinhos durante sua produção e a comparando com o resultado que você terá após a implementação de
+            nossos sensores em sua vinícola, sendo baseados na produção
+            média de vinhos de uma vinícola, com uma média de tempo de produção sendo de um mês.
+        </div>
+        <div class="divInput">
+            Informe a média do preço de seus vinhos (Em reais): <input id="input_valor" class="input"> <br> <br>
 
-        Informe a quantidade de vinhos que você vende por mês: <input id="input_qtd" class="input"> <br><br>
+            Informe quantos barris você possui em sua vinícola: <input id="input_barris" class="input"> <br><br>
 
-        <button class="botao" onclick="calcular()">Avaliar condições</button>
+            Informe quantos litros cada barril pode produzir por mês: <input id="input_litros" class="input"> <br> <br>
+
+            Informe a quantidade de vinhos que você vende por mês: <input id="input_qtd" class="input"> <br><br>
+
+            <button class="botao" onclick="calcular()">Avaliar condições</button>
+        </div>
     </div>
-
     <div id="div_mensagem"></div>
 
 </body>
@@ -49,22 +71,22 @@
 
         var ganhosPosWine = valorMensal * 0.85;
         var litrosPosWine = litrosMes * 0.85;
-        
-        if (valor <=0 || barris <=0 || litros <=0 || qtdVenda <=0) { //Para se algum valor inserido pelo usuario for igual a zero aparecer um alerta informando que os dados são invalidos
-            alert ("Valores inseridos são invalidos tente novamente");
-        }else {
+
+        if (valor <= 0 || barris <= 0 || litros <= 0 || qtdVenda <= 0) { //Para se algum valor inserido pelo usuario for igual a zero aparecer um alerta informando que os dados são invalidos
+            alert("Valores inseridos são invalidos tente novamente");
+        } else {
             if (ganhoMensal > 0) {
-            div_mensagem.innerHTML = `<div class="divResposta">Abaixo você pode verificar a condição atual de sua vinícula e a comparação com as condições que nós da WineCare podemos lhe proporcionar:  <br><br>
+                div_mensagem.innerHTML = `<div class="divResposta">Abaixo você pode verificar a condição atual de sua vinícula e a comparação com as condições que nós da WineCare podemos lhe proporcionar:  <br><br>
         
         Ganho atual de vinhos: Atualmente você lucra <span class='roxo'> R$${ganhoMensal.toFixed(2)} </span> com sua vínicola mas com a implementação de nossos sensores este valor subiria para <span class='verde'> R$${ganhosPosWine} </span>. <br> <br>
         Estes valores equivalem aos litros que você produz por mês, sendo <span class= "negrito"> ${litrosMes.toFixed(2)}L </span>, mas sendo vendidos somente <span class= "negrito"> ${litrosVendidos.toFixed(2)}L </span> mas com nossa empresa este valor aumentará para <span class='verde'> ${litrosPosWine.toFixed(2)}L. </span> </div>`;
-        } else if (ganhoMensal < 0) {
-            div_mensagem.innerHTML = `<div class="divResposta">Abaixo você pode verificar a condição atual de sua vinícula e a comparação com as condições que nós da WineCare podemos lhe proporcionar:  <br><br>
+            } else if (ganhoMensal < 0) {
+                div_mensagem.innerHTML = `<div class="divResposta">Abaixo você pode verificar a condição atual de sua vinícula e a comparação com as condições que nós da WineCare podemos lhe proporcionar:  <br><br>
         
         Desperdicio atual de vinhos: Atualmente você perde <span class='vermelho'> R$${ganhoMensal} </span> com a implementação de nossos sensores este valor subiria para <span class='verde'> R$${ganhosPosWine} </span>. <br> <br>
         Estes valores equivalem aos litros que você produz por mês, sendo <span class = "negrito"> ${litrosMes}L </span>, mas sendo vendidos somente ${litrosVendidos}L mas com nossa empresa este valor aumentará para ${litrosPosWine}L. </div>`;
-        } 
+            }
 
-    }
+        }
     }
 </script>
