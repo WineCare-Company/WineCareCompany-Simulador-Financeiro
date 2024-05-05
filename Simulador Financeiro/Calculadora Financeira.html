@@ -10,58 +10,86 @@
 
 <body>
 
-    <div class="preto">
+    <div class="box">
+
         <div class="fundo">
+
             <header class="header">
 
                 <nav>
 
-                    <h1>
+                    <h4>
                         Simulador Financeiro
-                    </h1>
-
+                    </h4>
+                    <div class="icone"><img src="assets/icone.png" alt=""></div>
                 </nav>
                 <br>
-
+                
             </header>
+            
             <div class="container">
-
-
-                <div>
+                
+                
+                
+                <div >
+                    
                     <h1> WineCare</h1>
-
-                    <div>
-                        A simulação a baixo é baseada em uma entrevista realizada com um dono de uma Vinícola,
-                        <b>Fernando
-                            Fischer</b> (dono da vinícola Fischer), apontando uma porcentagem de <span
-                            class="negrito">30%</span> de
-                        perdas de vinhos durante sua produção e a comparando com o resultado que você terá após a
-                        implementação de
-                        nossos sensores em sua vinícola, sendo baseados na produção
-                        média de vinhos de uma vinícola, com uma média de tempo de produção sendo de um mês.
+                    
+                    
+                    
+                    <div class="input_cont">
+                        
+                        <span>
+                            A simulação a baixo é baseada em uma entrevista realizada com um dono de uma Vinícola,
+                            <span class="bold">Fernando Fischer</span> (dono da vinícola Fischer),
+                            apontando uma porcentagem de <span class="bold">30%</span> de
+                            perdas de vinhos durante sua produção e a comparando com o resultado que você terá após a
+                            implementação de
+                            nossos sensores em sua vinícola, sendo baseados na produção
+                            média de vinhos de uma vinícola, com uma média de tempo de produção sendo de um mês.
+                        </span>
+                    
+                        <div class="controle">
+                            <div class="texts"> Informe a média do preço de seus vinhos (Em reais)</div> <input
+                            id="input_valor" class="input"> <br>
+                            <br>
+                        </div>
+                        <div class="simulacao">
+                        </div>
+                        <div class="controle">
+                            <div class="texts">Informe quantos barris você possui em sua vinícola </div><input
+                            id="input_barris" class="input">
+                            <br><br>
+                        </div>
+                        <div id="div_mensagem" class="div_msg"></div>
+                        
+                        <div class="controle">
+                            <div class="texts"> Informe quantos litros cada barril pode produzir por mês </div><input
+                            id="input_litros" class="input"> <br> <br>
+                        </div>
+                        
+                        <div class="controle">
+                            <div class="texts"> Informe a quantidade de vinhos que você vende por mês </div> <input
+                            id="input_qtd" class="input">
+                            <br><br>
+                        </div>
+                        
+                        <div class="controle">
+                        </div>
                     </div>
-                    <div>
-                        Informe a média do preço de seus vinhos (Em reais): <input id="input_valor" class="input"> <br>
-                        <br>
-
-                        Informe quantos barris você possui em sua vinícola: <input id="input_barris" class="input">
-                        <br><br>
-
-                        Informe quantos litros cada barril pode produzir por mês: <input id="input_litros"
-                            class="input"> <br> <br>
-
-                        Informe a quantidade de vinhos que você vende por mês: <input id="input_qtd" class="input">
-                        <br><br>
-
-                        <button onclick="calcular()">Avaliar condições</button>
+                    <div class="button_calculo"><button onclick="calcular()">Avaliar condições</button>
                     </div>
+                    
+                    
                 </div>
+                
             </div>
-            <div id="div_mensagem"></div>
-
+            
+            
         </div>
+        
     </div>
-
+    
 </body>
 
 </html>
@@ -69,19 +97,20 @@
 <script>
 
     function calcular() {
-
+        
         var valor = Number(input_valor.value);
         var barris = Number(input_barris.value);
         var litros = Number(input_litros.value);
         var qtdVenda = Number(input_qtd.value);
 
-        var valorMensal = valor * qtdVenda; // Valor média que a pessoa vende por mês 
-        var ganhoMensal = valorMensal * 0.7; // Informando o valor mensal desperdiçado
-        var litrosMes = barris * litros; // Quanto produz por mês em litros
-        var litrosVendidos = litrosMes * 0.7; // Quantidade de litros de vinhos desperdiçados na produção
 
-        var ganhosPosWine = valorMensal * 0.85;
-        var litrosPosWine = litrosMes * 0.85;
+        var valorMensal = valor * qtdVenda; // Valor média que a pessoa vende por mês 
+        var ganhoMensal = valorMensal * 0.85; // Informando o valor mensal desperdiçado
+        var litrosMes = barris * litros; // Quanto produz por mês em litros
+        var litrosVendidos = litrosMes * 0.85; // Quantidade de litros de vinhos desperdiçados na produção
+
+        var ganhosPosWine = valorMensal * 0.925;
+        var litrosPosWine = litrosMes * 0.925;
 
         if (valor <= 0 || barris <= 0 || litros <= 0 || qtdVenda <= 0) { //Para se algum valor inserido pelo usuario for igual a zero aparecer um alerta informando que os dados são invalidos
             alert("Valores inseridos são invalidos tente novamente");
@@ -90,12 +119,12 @@
                 div_mensagem.innerHTML = `<div class="divResposta">Abaixo você pode verificar a condição atual de sua vinícula e a comparação com as condições que nós da WineCare podemos lhe proporcionar:  <br><br>
         
         Ganho atual de vinhos: Atualmente você lucra <span class='roxo'> R$${ganhoMensal.toFixed(2)} </span> com sua vínicola mas com a implementação de nossos sensores este valor subiria para <span class='verde'> R$${ganhosPosWine} </span>. <br> <br>
-        Estes valores equivalem aos litros que você produz por mês, sendo <span class= "negrito"> ${litrosMes.toFixed(2)}L </span>, mas sendo vendidos somente <span class= "negrito"> ${litrosVendidos.toFixed(2)}L </span> mas com nossa empresa este valor aumentará para <span class='verde'> ${litrosPosWine.toFixed(2)}L. </span> </div>`;
+        Estes valores equivalem aos litros que você produz por mês, sendo <span class= "negrito"> ${litrosMes.toFixed(2)}L </span>, mas sendo vendidos somente <span class= "litrosvendidos"> ${litrosVendidos.toFixed(2)}L </span> mas com nossa empresa este valor aumentará para <span class='verde'> ${litrosPosWine.toFixed(2)}L. </span> </div>`;
             } else if (ganhoMensal < 0) {
                 div_mensagem.innerHTML = `<div class="divResposta">Abaixo você pode verificar a condição atual de sua vinícula e a comparação com as condições que nós da WineCare podemos lhe proporcionar:  <br><br>
         
         Desperdicio atual de vinhos: Atualmente você perde <span class='vermelho'> R$${ganhoMensal} </span> com a implementação de nossos sensores este valor subiria para <span class='verde'> R$${ganhosPosWine} </span>. <br> <br>
-        Estes valores equivalem aos litros que você produz por mês, sendo <span class = "negrito"> ${litrosMes}L </span>, mas sendo vendidos somente ${litrosVendidos}L mas com nossa empresa este valor aumentará para ${litrosPosWine}L. </div>`;
+        Estes valores equivalem aos litros que você produz por mês, sendo <span class = "negrito"> ${litrosMes}L </span>, mas sendo vendidos somente <span class='litrosvendidos'>${litrosVendidos}</span>L mas com nossa empresa este valor aumentará para ${litrosPosWine}L. </div>`;
             }
 
         }
