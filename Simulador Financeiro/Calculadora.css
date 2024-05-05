@@ -12,14 +12,13 @@ body {
     box-sizing: border-box;
     font-family: 'Poppins';
     flex-direction: column;
-    display: flex;
+    display: flex;   
     justify-content: center;
     background-image: url(assets/barrels-whiskey-bourbon-aging-storage-facility.jpg);
-    width: 115vw;
-    height: 115vh;
+    width: 110vw;
+    height: 110vh;
     background-size: cover;
     background-repeat: no-repeat;
-    display: flex;
 }
 
 
@@ -39,12 +38,12 @@ body {
 }
 
 .header {
-    width: 950px;
+    width: 810px;
 
     display: flex;
     justify-content: center;
-    
-    
+
+
     nav {
         width: 1800px;
         border-bottom: solid 3px #fff;
@@ -52,52 +51,52 @@ body {
         align-items: center;
         justify-content: space-between;
         margin-bottom: 30px;
-        
-        
+
+
     }
-    
+
     nav h4 {
         font-size: 20px;
         color: #fff;
-        margin-left: 360px;
+        margin-left: 320px;
         margin-bottom: 10px;
-        
+
     }
-    
+
     nav img {
         display: flex;
         width: 30px;
         margin-bottom: 10px;
     }
-    
+
 }
 
 
 
 .container {
     display: flex;
-    flex-direction: row;  
-    align-items: center;  
-    justify-content: space-between;  
-    width: 100%;  
-    background-color: #fff;  
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #fff;
     padding: 20px;
     border-radius: 20px;
 }
 
 
 
-.input_cont {
-    flex: 1; 
+  .input_cont  { 
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; 
-    width: 100%; 
-    padding: 50px;
-}
+    align-items: flex-end;
+    width: 100%;
+    padding: 10px;
+} 
 
 
-.controle{
+.controle {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -112,8 +111,9 @@ body {
     flex-direction: column;
     display: flex;
     justify-content: start;
-    
-    
+    margin-left: 15px;
+
+
 }
 
 
@@ -124,13 +124,14 @@ input {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #A9A9A9; 
+    border: 1px solid #A9A9A9;
     background-color: #fffafa;
     color: #C3155E;
     width: 390px;
-    /* flex: 2; */
-    
- 
+    margin-left: 15px;
+
+
+
 }
 
 button {
@@ -145,7 +146,6 @@ button {
     border-radius: 4px;
     display: flex;
     justify-content: center;
-    
 }
 
 
@@ -156,12 +156,12 @@ button {
     flex-direction: column;
     justify-content: start;
     text-align: justify;
-    /* padding: 0 20px; */
-    font-size: 14px;
-   
+    padding: 0 55px;
+    font-size: 13px;
+
 }
 
-h1{
+h1 {
     display: flex;
     justify-content: center;
     font-size: 26px;
@@ -179,63 +179,107 @@ h1{
     border-radius: 20px;
 }
 
-.button_calculo{
-    order: 1;
+.button_calculo {
+    
     margin-right: auto;
     display: zero;
     margin-left: 750px;
     margin-top: 5px;
 }
-.roxo{
-    color:lightgreen;
-}
 
-.verde{
-    color: lightskyblue;
-}
-
-.negrito{
+.roxo {
     color: lightgreen;
 }
 
-.litrosvendidos{
+.verde {
+    color: lightskyblue;
+}
+
+.negrito {
+    color: lightgreen;
+}
+
+.litrosvendidos {
     color: lightsalmon;
 }
 
-.bold{
+.bold {
     font-weight: bold;
-    
+
 }
-.div_msg{
-    width: 400px;  
+
+.div_msg {
+    width: 350px;
     height: 10px;
-  
-      padding: 0px;    
-    
-     border-radius: 15px;
-  margin-left: 50px;
-     margin-top: 0px;   
-     
+    padding: 0px;
+    margin-left: 50px;
+
+
 }
-.button_reset{
-    
+
+.button_reset {
+
     margin-right: auto;
     display: zero;
     margin-left: 750px;
     margin-top: 5px;
     margin-bottom: 30px;
     
-}
-.button_container{
-    display: flex;
-    justify-content: flex-end; /* Para alinhar os botões horizontalmente */
-    margin-top: 10px; /* Adicione margem superior para espaçamento */
-}
-.button_calculo, .button_reset, .button_retorno {
-    margin: 0 10px; /* Adicione margem horizontal entre os botões */
-}
-.button_retorno{
-    display: flex;
-   margin-right: 400px;
+
 }
 
+.button_container {
+    display: flex;
+    justify-content: flex-start;
+    /* Para alinhar os botões horizontalmente */
+    margin-top: 10px;
+    /* Adicione margem superior para espaçamento */
+}
+
+.button_calculo, .button_reset, .button_retorno {
+    margin: 0 10px;
+    /* Adicione margem horizontal entre os botões */
+}
+
+.button_retorno {
+    display: flex;
+    margin-left: 300px;
+    
+}
+ .texto{
+    margin-bottom: 20px;
+ }
+ 
+ footer {
+    width: 100%;
+    height: 200px;
+    background-color: rgb(27, 10, 19);
+    background-image: url(assets/footer.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 30px;
+
+    & div {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        color: white;
+    }
+
+    & ul {
+        list-style: none;
+    }
+
+    & a {
+        text-decoration: none;
+        color: white;
+    }
+
+    & img {
+        width: 30px;
+    }
+}
